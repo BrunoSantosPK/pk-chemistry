@@ -2,7 +2,7 @@
 
     $response = array(
         "sucesso" => true,
-        "data" => "Esse pequeno web servide realiza alguns procedimentos da química."
+        "data" => "Esse pequeno web servide realiza alguns procedimentos da química. Agora com uma pequena atualização."
     );
 
 ?>
