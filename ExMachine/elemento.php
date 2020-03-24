@@ -90,7 +90,7 @@
          * @param String $buscador Representa o elemento a ser buscado. Pode ser a sigla dele na tabela ou o nome completo, em português do Brasil.
          * @return Array Retorna um array com as informações do elemento, ou retorna array() caso não encontre o elemento. Ocorre no caso de erro no buscador ou elemento não cadastrado no banco de dados.
         */
-        static function getElemento($buscador) {
+        public static function getElemento($buscador): array {
             // Verifica a quantidade de caracteres existentes
             $numCar = strlen(utf8_decode($buscador));
 
@@ -110,6 +110,18 @@
                     $res = $elemento;
             }
 
+            return $res;
+        }
+
+        /**
+         * Método estático para encontrar todos os elementos químicos cadastrados na classe ElementoQuimico. Retorna uma lista de arrays.
+         * @return array Lista com arrays (JSON) para cada elemento.
+         */
+        public static function getAll(): array {
+            $res = array();
+            foreach(ElementoQuimico::$elementos as $elemento) {
+                array_push($res, $elemento);
+            }
             return $res;
         }
 
