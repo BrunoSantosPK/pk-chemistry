@@ -10,7 +10,9 @@ As funcionalidades podem ser acessadas não só pela interface, mas pelo web ser
 
 Funcionalidade: Análise de fórmula química e cálculo da massa molar
 Consumindo: https://pkchemistry.herokuapp.com/ch/comando.php?acao=mm&formula={formula}
-  Substituir {formula} pela fórmula química a ser analisada, por exemplo, H2SO4
+
+Substituir {formula} pela fórmula química a ser analisada, por exemplo, H2SO4
+  
 Exemplo de resposta JSON:
 {
   "sucesso": true,
@@ -19,11 +21,17 @@ Exemplo de resposta JSON:
 }
   
 Funcionalidade: Informações de elementos químicos
+
 Consumindo: https://pkchemistry.herokuapp.com/ch/comando.php?acao=elementos&query={query}
-  Substituir {query} pelo tipo de busca
-    -> all: Recupera todos os elementos cadastrados na tabela de resposta
-    -> Na, K, etc: Recupera as informações específicas de um elemento, a partir do símbolo dele
-    -> Sódio, Potássio, etc: Recupera as informações específicas de um elemento, a partir do nome dele (em português), não diferencia maiúsculas de minúsculas.
+
+Substituir {query} pelo tipo de busca
+  
+  -> all: Recupera todos os elementos cadastrados na tabela de resposta
+  
+  -> Na, K, etc: Recupera as informações específicas de um elemento, a partir do símbolo dele
+  
+  -> Sódio, Potássio, etc: Recupera as informações específicas de um elemento, a partir do nome dele (em português), não diferencia maiúsculas de minúsculas.
+
 Exemplo de resposta JSON:
 {
   "sucesso": true,
