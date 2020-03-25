@@ -19,7 +19,9 @@ Exemplo de resposta JSON:
   "formulaQuimica": "H2SO4",
   "massaMolar": 98.072
 }
-  
+
+===========================
+
 Funcionalidade: Informações de elementos químicos
 
 Consumindo: https://pkchemistry.herokuapp.com/ch/comando.php?acao=elementos&query={query}
