@@ -1,4 +1,4 @@
-# pk-chemistry
+# PKCHEMISTRY
 
 **Alguns procedimentos da química**
 
