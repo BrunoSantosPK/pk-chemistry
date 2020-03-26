@@ -11,11 +11,13 @@ function calcMM() {
         if(res.sucesso) {
             div.append(`Massa Molar (g/mol): ${res.massaMolar.toString().replace(".", ",")}`);
         } else {
-            div.append(`Um erro aconteceu: ${res.erro}`);
+            div.append(`Um erro ocorreu: ${res.erro}`);
         }
     };
     req(url, type, data, callback);
+    return false;
 }
+
 
 function req(url, type, data, callback) {
     $.ajax({
