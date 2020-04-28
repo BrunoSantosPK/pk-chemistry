@@ -96,6 +96,41 @@
             return $this;
         }
 
+        public function detalhar() {
+            $cards = array();
+
+            // Verifica os elementos disponíveis, eliminando repetições
+            foreach($this->composicao as $elemento) {
+                $busca = $this->existe($elemento, $cards);
+
+                if(!$busca[0]) {
+                    $novoCard = array(
+                        "simbolo" => $elemento["simbolo"],
+                        "nome" => $elemento["elemento"]["nome"],
+                        "mm" => $elemento["elemento"]["mm"],
+                        "quantidade" => $elemento["multiplicador"],
+                        "porcentagem" => $elemento["elemento"]["mm"] * ($elemento["multiplicador"]) / $this->mm
+                    );
+
+                    array_push($cards, $novoCard);
+                } else {
+                    $cards[$busca[1]]["quantidade"] += $elemento["multiplicador"];
+                    $cards[$busca[1]]["porcentagem"] = ($cards[$busca[1]]["mm"] * $cards[$busca[1]]["quantidade"]) / $this->mm;
+                }
+            }
+
+            return $cards;
+        }
+
+        private function existe($elemento, $lista) {
+            for($i = 0; $i < count($lista); $i++) {
+                if($lista[$i]["simbolo"] == $elemento["simbolo"]) {
+                    return array(true, $i);
+                }
+            }
+            return array(false, -1);
+        }
+
         /**
          * Realiza o cálculo da massa molar, a partir de uma montagem prévia da molécula. É chamada sempre após a finalização do método público Substancia->criar(). Salva a massa molar na propriedade privada da classe.
          */

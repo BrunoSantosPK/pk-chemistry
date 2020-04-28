@@ -9,10 +9,12 @@
         if($substancia->getIntegridade()) {
             // Cálculo realizado com sucesso
             $mm = $substancia->getMM();
+            $detalhes = $substancia->detalhar();
 
             // Monta a resposta
             $response->validar();
             $response->add("massaMolar", $mm);
+            $response->add("detalhes", $detalhes);
         } else {
             // Erro de montagem
             $response->add("erro", $substancia->getErro());
