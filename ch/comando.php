@@ -31,7 +31,7 @@
         $novidades = "O aplicativo Massa Molar está na versão 1.0.1, verifique na Play Store a sua e atualize. Agora o aplicativo conta com uma Tabela Periódica interativa e uma breve descrição sobre Propriedades Periódicas. E claro, com uma interface bem mais legal.";
 
         $response = new Response();
-        $response->validar()
+        $response->validar();
         $response->add("novidades", $novidades);
         echo $response->getJSON();
     } else {
